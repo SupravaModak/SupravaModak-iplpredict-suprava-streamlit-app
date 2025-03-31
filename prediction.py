@@ -43,8 +43,8 @@ def set_bg(iplimage):
 
 # Function to load image as base64
 import base64
-def get_base64_of_image("D:\predictor"):
-    with open("D:\predictor", "rb") as img_file:
+def get_base64_of_image("iplimage"):
+    with open("iplimage", "rb") as img_file:
         return base64.b64encode(img_file.read()).decode()
 
 # Apply background
