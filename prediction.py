@@ -8,7 +8,6 @@ Created on Mon Mar 31 19:38:34 2025
 import streamlit as st
 import pickle
 import pandas as pd
-image_path = "iplimage.jpg"
 
 teams=['Sunrisers Hyderabad',
  'Mumbai Indians',
@@ -30,27 +29,6 @@ cities= ['Hyderabad', 'Rajkot', 'Bangalore', 'Mumbai', 'Indore', 'Kolkata',
 pipe=pickle.load(open('pipe.pkl','rb'))
 st.set_page_config(layout="wide")
 
-# Function to load image as base64
-import base64
-def get_base64_of_image(image_path):
-    with open(image_path, "rb") as img_file:
-        return base64.b64encode(img_file.read()).decode()
-bg_image = get_base64_of_image("iplimage.jpg")  # If it's in the same folder as prediction.py
-# Custom CSS to set the background
-def set_bg(image_file):
-    bg_style = f"""
-    <style>
-    .stApp {{
-        background: url("data:image/jpg;base64,{image_file}") no-repeat center center fixed;
-        background-size: cover;
-    }}
-    </style>
-    """
-    st.markdown(bg_style, unsafe_allow_html=True)
-
-# Apply background
-bg_image = get_base64_of_image("D:\predictor\iplimage.jpg")  # Change to your image filename
-set_bg(bg_image)
 st.title('IPL Winner Predictor')
 col1,col2=st.columns(2)
 with col1:
