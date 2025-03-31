@@ -29,8 +29,14 @@ cities= ['Hyderabad', 'Rajkot', 'Bangalore', 'Mumbai', 'Indore', 'Kolkata',
 pipe=pickle.load(open('pipe.pkl','rb'))
 st.set_page_config(layout="wide")
 
+# Function to load image as base64
+import base64
+def get_base64_of_image(D:\predictor):
+    with open(D:\predictor, "rb") as img_file:
+        return base64.b64encode(img_file.read()).decode()
+
 # Custom CSS to set the background
-def set_bg(iplimage):
+def set_bg(iplimage.jpg):
     bg_style = f"""
     <style>
     .stApp {{
@@ -40,12 +46,6 @@ def set_bg(iplimage):
     </style>
     """
     st.markdown(bg_style, unsafe_allow_html=True)
-
-# Function to load image as base64
-import base64
-def get_base64_of_image("iplimage"):
-    with open("iplimage", "rb") as img_file:
-        return base64.b64encode(img_file.read()).decode()
 
 # Apply background
 bg_image = get_base64_of_image("iplimage.jpg")  # Change to your image filename
