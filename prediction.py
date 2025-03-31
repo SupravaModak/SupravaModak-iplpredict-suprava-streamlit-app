@@ -27,6 +27,29 @@ cities= ['Hyderabad', 'Rajkot', 'Bangalore', 'Mumbai', 'Indore', 'Kolkata',
        'Raipur', 'Ranchi', 'Abu Dhabi', 'Sharjah', 'Mohali',
        'Bengaluru']
 pipe=pickle.load(open('pipe.pkl','rb'))
+st.set_page_config(layout="wide")
+
+# Custom CSS to set the background
+def set_bg(iplimage):
+    bg_style = f"""
+    <style>
+    .stApp {{
+        background: url("data:image/jpg;base64,{iplimage}") no-repeat center center fixed;
+        background-size: cover;
+    }}
+    </style>
+    """
+    st.markdown(bg_style, unsafe_allow_html=True)
+
+# Function to load image as base64
+import base64
+def get_base64_of_image("D:\predictor"):
+    with open("D:\predictor", "rb") as img_file:
+        return base64.b64encode(img_file.read()).decode()
+
+# Apply background
+bg_image = get_base64_of_image("iplimage.jpg")  # Change to your image filename
+set_bg(bg_image)
 st.title('IPL Winner Predictor')
 col1,col2=st.columns(2)
 with col1:
