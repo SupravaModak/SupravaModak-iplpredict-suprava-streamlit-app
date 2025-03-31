@@ -31,16 +31,16 @@ st.set_page_config(layout="wide")
 
 # Function to load image as base64
 import base64
-def get_base64_of_image(D:\predictor):
-    with open(D:\predictor, "rb") as img_file:
+def get_base64_of_image(image_path):
+    with open(image_path, "rb") as img_file:
         return base64.b64encode(img_file.read()).decode()
 
 # Custom CSS to set the background
-def set_bg(iplimage):
+def set_bg(image_file):
     bg_style = f"""
     <style>
     .stApp {{
-        background: url("data:image/jpg;base64,{iplimage}") no-repeat center center fixed;
+        background: url("data:image/jpg;base64,{image_file}") no-repeat center center fixed;
         background-size: cover;
     }}
     </style>
@@ -48,7 +48,7 @@ def set_bg(iplimage):
     st.markdown(bg_style, unsafe_allow_html=True)
 
 # Apply background
-bg_image = get_base64_of_image("iplimage.jpg")  # Change to your image filename
+bg_image = get_base64_of_image("D:\predictor\iplimage.jpg")  # Change to your image filename
 set_bg(bg_image)
 st.title('IPL Winner Predictor')
 col1,col2=st.columns(2)
