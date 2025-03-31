@@ -36,7 +36,7 @@ def get_base64_of_image(D:\predictor):
         return base64.b64encode(img_file.read()).decode()
 
 # Custom CSS to set the background
-def set_bg(iplimage.jpg):
+def set_bg(iplimage):
     bg_style = f"""
     <style>
     .stApp {{
