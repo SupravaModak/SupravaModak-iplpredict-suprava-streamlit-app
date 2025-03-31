@@ -8,7 +8,7 @@ Created on Mon Mar 31 19:38:34 2025
 import streamlit as st
 import pickle
 import pandas as pd
-
+image_path = "iplimage.jpg"
 teams=['Sunrisers Hyderabad',
  'Mumbai Indians',
  'Royal Challengers Bangalore',
