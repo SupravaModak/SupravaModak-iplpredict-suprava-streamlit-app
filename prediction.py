@@ -9,7 +9,7 @@ import streamlit as st
 import pickle
 import pandas as pd
 image_path = "iplimage.jpg"
-bg_image = get_base64_of_image("iplimage.jpg")  # If it's in the same folder as prediction.py
+
 teams=['Sunrisers Hyderabad',
  'Mumbai Indians',
  'Royal Challengers Bangalore',
@@ -35,7 +35,7 @@ import base64
 def get_base64_of_image(image_path):
     with open(image_path, "rb") as img_file:
         return base64.b64encode(img_file.read()).decode()
-
+bg_image = get_base64_of_image("iplimage.jpg")  # If it's in the same folder as prediction.py
 # Custom CSS to set the background
 def set_bg(image_file):
     bg_style = f"""
