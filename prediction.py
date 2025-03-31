@@ -9,6 +9,7 @@ import streamlit as st
 import pickle
 import pandas as pd
 image_path = "iplimage.jpg"
+bg_image = get_base64_of_image("iplimage.jpg")  # If it's in the same folder as prediction.py
 teams=['Sunrisers Hyderabad',
  'Mumbai Indians',
  'Royal Challengers Bangalore',
